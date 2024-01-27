@@ -16,9 +16,20 @@
         {name:'奥黛丽霍尔', age:17, tarot:'观众'},
         {name:'格尔曼斯帕罗', age:19, tarot:'密偶大师'}
       ])
-  
-  let fullName = computed(()=>{
-    return Members.value[0].name + Members.value[1].name+ Members.value[2].name
+  let firstName = ref('克莱恩')
+  let lastName = ref('莫雷蒂')
+
+
+  // let fullName = computed(()=>{
+  //   return firstName.value + lastName.value
+  // })
+  let fullName = computed({
+    get(){
+      return firstName.value + lastName.value
+    },
+    set(value){
+      fullName.value = value
+    }
   })
 </script>
 
